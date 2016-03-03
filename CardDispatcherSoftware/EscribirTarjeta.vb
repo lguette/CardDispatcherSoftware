@@ -8,7 +8,25 @@
     Dim foto As String
 
     Dim usuarios As New UsuariosTarjetasDataSetTableAdapters.UsuariosTableAdapter
+    Dim directorios As New UsuariosTarjetasDataSetTableAdapters.DirectoriosTableAdapter
     Dim rd As COMRD800Lib.IRD800
+    Dim st As Integer
+
+    Public Function StrToHex(ByRef str As String) As String
+        Dim byteArray() As Byte
+        Dim hexNumbers As System.Text.StringBuilder = New System.Text.StringBuilder
+        byteArray = System.Text.ASCIIEncoding.ASCII.GetBytes(str)
+        For i As Integer = 0 To byteArray.Length - 1
+            hexNumbers.Append(byteArray(i).ToString("x"))
+        Next
+        str = hexNumbers.ToString()
+
+        For i As Integer = 1 To 32 - Len(str)
+            str = str.Insert(Len(str), "0")
+        Next
+
+        Return str
+    End Function
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         If TextBox1.Text = "" Or TextBox2.Text = "" Or TextBox3.Text = "" Or TextBox4.Text = "" Then
@@ -28,6 +46,35 @@
         If usuarios.BuscarCi(idTarjeta) = "" Then
             Dim TarjetaOk As New ComunicacionIniciada
             usuarios.InsertarUsuario(idTarjeta, nombre, apellido, ci, ultimaEscritura, foto)
+
+            rd.dc_init(100, 115200)
+            rd.put_bstrSBuffer_asc = "FFFFFFFFFFFF"
+
+            nombre = StrToHex(nombre)
+            apellido = StrToHex(apellido)
+            ci = StrToHex(ci)
+            ultimaEscritura = StrToHex(ultimaEscritura)
+
+            For i = 1 To 5
+                rd.dc_authentication(0, i)
+
+                Select Case i
+                    Case 1
+                        rd.put_bstrSBuffer_asc = "00000000000000000000000000000000"
+                    Case 2
+                        rd.put_bstrSBuffer_asc = nombre
+                    Case 3
+                        rd.put_bstrSBuffer_asc = apellido
+                    Case 4
+                        rd.put_bstrSBuffer_asc = ci
+                    Case 5
+                        rd.put_bstrSBuffer_asc = ultimaEscritura
+                End Select
+                st = rd.dc_write(i * 4)
+
+            Next
+            rd.dc_exit()
+
             TarjetaOk.Show()
             TarjetaOk.Label1.Text = "      Tarjeta Agregada"
         Else
@@ -45,36 +92,39 @@
             If response = MsgBoxResult.Yes Then   ' User chose Yes.
                 Dim TarjetaOk As New ComunicacionIniciada
                 usuarios.ActualizarUsuario(idTarjeta, nombre, apellido, ci, ultimaEscritura, foto, idTarjeta)
-                TarjetaOk.Show()
-                TarjetaOk.Label1.Text = "      Tarjeta Agregada"
-
                 rd.dc_init(100, 115200)
                 rd.put_bstrSBuffer_asc = "FFFFFFFFFFFF"
 
-                If response = 0 Then
-                    For i = 1 To 5
-                        rd.dc_authentication(0, i)
+                nombre = StrToHex(nombre)
+                apellido = StrToHex(apellido)
+                ci = StrToHex(ci)
+                ultimaEscritura = StrToHex(ultimaEscritura)
 
-                        Select Case i
-                            Case 1
+                For i = 1 To 5
+                    rd.dc_authentication(0, i)
 
-                            Case 2
-                                rd.put_bstrRBuffer = nombre
-                            Case 3
-                                rd.put_bstrRBuffer = apellido
-                            Case 4
-                                rd.put_bstrRBuffer = ci
-                            Case 5
-                                rd.put_bstrRBuffer = ultimaEscritura
-                        End Select
-                        rd.dc_write(i * 4)
-                    Next
-                End If
+                    Select Case i
+                        Case 1
+                            rd.put_bstrSBuffer_asc = "00000000000000000000000000000000"
+                        Case 2
+                            rd.put_bstrSBuffer_asc = nombre
+                        Case 3
+                            rd.put_bstrSBuffer_asc = apellido
+                        Case 4
+                            rd.put_bstrSBuffer_asc = ci
+                        Case 5
+                            rd.put_bstrSBuffer_asc = ultimaEscritura
+                    End Select
+                    st = rd.dc_write(i * 4)
+
+                Next
                 rd.dc_exit()
+                TarjetaOk.Show()
+                TarjetaOk.Label1.Text = "      Tarjeta Agregada"
 
             Else
-                ' Perform some other action.
-            End If
+                    ' Perform some other action.
+                End If
 
         End If
     End Sub
@@ -109,6 +159,7 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim openFileDialog1 As New OpenFileDialog()
+        Dim direccionImagen As String
 
         openFileDialog1.InitialDirectory = "c:\"
         openFileDialog1.Filter = "jpg files (*.jpg)|*.jpg|PNG files (*.PNG)|*.PNG|All files (*.*)|*.*"
@@ -118,6 +169,13 @@
         If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
             foto = openFileDialog1.FileName
             PictureBox1.BackgroundImage = Image.FromFile(foto)
+            direccionImagen = directorios.BuscarDirectorio(1)
+            My.Computer.FileSystem.CopyFile(
+                 foto,
+                   direccionImagen + TextBox4.Text + ".jpg",
+                    Microsoft.VisualBasic.FileIO.UIOption.AllDialogs,
+                     Microsoft.VisualBasic.FileIO.UICancelOption.DoNothing)
+            foto = direccionImagen + TextBox4.Text + ".jpg"
         End If
     End Sub
 
