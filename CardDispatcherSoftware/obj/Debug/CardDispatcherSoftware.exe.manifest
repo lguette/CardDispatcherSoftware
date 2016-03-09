@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CardDispatcherSoftware.exe" size="482760">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CardDispatcherSoftware.exe" size="500680">
       <assemblyIdentity name="CardDispatcherSoftware" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NIJpSriNEcZpFCfVUyJVMBfYMnprRnvkDsk0RzSO4bk=</dsig:DigestValue>
+        <dsig:DigestValue>KhwnV8MbWOayOL84rWzOAn9R2SWw9LjqwuNN/aXKV78=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -68,7 +68,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>t2X4xkJMudHKiUs+J8374CjTmtAMQsOk3Ndzi6kXZes=</dsig:DigestValue>
+      <dsig:DigestValue>oKbW4Dd6YjYjfH0+bvfr0oVrHAnQhTPVxiBE2DWJkSw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="UsuariosTarjetas_log.ldf" size="851968" writeableType="applicationData">
@@ -77,7 +77,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>rLJJdVNnGypKh/CyzuyAAHLPfyjH7XUe0pL/0MX/aVo=</dsig:DigestValue>
+      <dsig:DigestValue>OctqwV0S0K1/fs3DndomuMogtUdM09om5Bl58Al0OGQ=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

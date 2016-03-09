@@ -80,7 +80,7 @@ SELECT IdTarjeta, Nombre, Apellido, ci, ultimaEscritura, foto FROM Usuarios WHER
               <Mapping SourceColumn="foto" DataSetColumn="foto" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="UsuariosTarjetasConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ActualizarUsuario" Modifier="Public" Name="ActualizarUsuario" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="ActualizarUsuario">
+              <DbSource ConnectionRef="UsuariosTarjetasConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ActualizarUsuario" Modifier="Public" Name="ActualizarUsuario" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ActualizarUsuario">
                 <UpdateCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.ActualizarUsuario</CommandText>
@@ -97,7 +97,7 @@ SELECT IdTarjeta, Nombre, Apellido, ci, ultimaEscritura, foto FROM Usuarios WHER
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="UsuariosTarjetasConnectionString (MySettings)" DbObjectName="[C:\USERS\LGUETTE\DOCUMENTS\VISUAL STUDIO 2015\PROJECTS\CARDDISPATCHERSOFTWARE\CARDDISPATCHERSOFTWARE\USUARIOSTARJETAS.MDF].dbo.BuscarCi" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="BuscarCi" Modifier="Public" Name="BuscarCi" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="BuscarCi">
+              <DbSource ConnectionRef="UsuariosTarjetasConnectionString (MySettings)" DbObjectName="[C:\USERS\LGUETTE\DOCUMENTS\VISUAL STUDIO 2015\PROJECTS\CARDDISPATCHERSOFTWARE\CARDDISPATCHERSOFTWARE\USUARIOSTARJETAS.MDF].dbo.BuscarCi" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="BuscarCi" Modifier="Public" Name="BuscarCi" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="BuscarCi">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.BuscarCi</CommandText>
@@ -108,7 +108,7 @@ SELECT IdTarjeta, Nombre, Apellido, ci, ultimaEscritura, foto FROM Usuarios WHER
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="UsuariosTarjetasConnectionString (MySettings)" DbObjectName="[C:\USERS\LGUETTE\DOCUMENTS\VISUAL STUDIO 2015\PROJECTS\CARDDISPATCHERSOFTWARE\CARDDISPATCHERSOFTWARE\USUARIOSTARJETAS.MDF].dbo.BuscarFoto" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="BuscarFoto" Modifier="Public" Name="BuscarFoto" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="BuscarFoto">
+              <DbSource ConnectionRef="UsuariosTarjetasConnectionString (MySettings)" DbObjectName="[C:\USERS\LGUETTE\DOCUMENTS\VISUAL STUDIO 2015\PROJECTS\CARDDISPATCHERSOFTWARE\CARDDISPATCHERSOFTWARE\USUARIOSTARJETAS.MDF].dbo.BuscarFoto" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="BuscarFoto" Modifier="Public" Name="BuscarFoto" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="BuscarFoto">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.BuscarFoto</CommandText>
@@ -119,7 +119,65 @@ SELECT IdTarjeta, Nombre, Apellido, ci, ultimaEscritura, foto FROM Usuarios WHER
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="UsuariosTarjetasConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertarFoto" Modifier="Public" Name="InsertarFoto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertarFoto">
+              <DbSource ConnectionRef="UsuariosTarjetasConnectionString (MySettings)" DbObjectName="dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdTarjeta, Nombre, Apellido, ci, ultimaEscritura, foto FROM dbo.Usuarios</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UsuariosTarjetasConnectionString (MySettings)" DbObjectName="dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByDataPorIdTarjeta" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataDataPorIdTarjeta" GeneratorSourceName="FillByDataPorIdTarjeta" GetMethodModifier="Public" GetMethodName="GetDataDataPorIdTarjeta" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataDataPorIdTarjeta" UserSourceName="FillByDataPorIdTarjeta">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT IdTarjeta, Nombre, Apellido, ci, ultimaEscritura, foto FROM dbo.Usuarios WHERE (IdTarjeta = @IdTarjeta)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdTarjeta" ColumnName="IdTarjeta" DataSourceName="[C:\USERS\LGUETTE\DOCUMENTS\VISUAL STUDIO 2015\PROJECTS\CARDDISPATCHERSOFTWARE\CARDDISPATCHERSOFTWARE\USUARIOSTARJETAS.MDF].dbo.Usuarios" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@IdTarjeta" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="IdTarjeta" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UsuariosTarjetasConnectionString (MySettings)" DbObjectName="dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByDataPorUltimaEscritura" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataPorUltimaEscritura" GeneratorSourceName="FillByDataPorUltimaEscritura" GetMethodModifier="Public" GetMethodName="GetDataPorUltimaEscritura" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataPorUltimaEscritura" UserSourceName="FillByDataPorUltimaEscritura">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT IdTarjeta, Nombre, Apellido, ci, ultimaEscritura, foto FROM dbo.Usuarios WHERE (ultimaEscritura = @ultimaEscritura)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="ultimaEscritura" ColumnName="ultimaEscritura" DataSourceName="[C:\USERS\LGUETTE\DOCUMENTS\VISUAL STUDIO 2015\PROJECTS\CARDDISPATCHERSOFTWARE\CARDDISPATCHERSOFTWARE\USUARIOSTARJETAS.MDF].dbo.Usuarios" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@ultimaEscritura" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="ultimaEscritura" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UsuariosTarjetasConnectionString (MySettings)" DbObjectName="dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillDataPorApellido" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataPorApellido" GeneratorSourceName="FillDataPorApellido" GetMethodModifier="Public" GetMethodName="GetDataPorApellido" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataPorApellido" UserSourceName="FillDataPorApellido">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT IdTarjeta, Nombre, Apellido, ci, ultimaEscritura, foto FROM dbo.Usuarios WHERE (Apellido = @Apellido)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Apellido" ColumnName="Apellido" DataSourceName="[C:\USERS\LGUETTE\DOCUMENTS\VISUAL STUDIO 2015\PROJECTS\CARDDISPATCHERSOFTWARE\CARDDISPATCHERSOFTWARE\USUARIOSTARJETAS.MDF].dbo.Usuarios" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@Apellido" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="Apellido" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UsuariosTarjetasConnectionString (MySettings)" DbObjectName="dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillDataPorci" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataPorci" GeneratorSourceName="FillDataPorci" GetMethodModifier="Public" GetMethodName="GetDataPorci" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataPorci" UserSourceName="FillDataPorci">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT IdTarjeta, Nombre, Apellido, ci, ultimaEscritura, foto FROM dbo.Usuarios WHERE (ci = @ci)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="ci" ColumnName="ci" DataSourceName="[C:\USERS\LGUETTE\DOCUMENTS\VISUAL STUDIO 2015\PROJECTS\CARDDISPATCHERSOFTWARE\CARDDISPATCHERSOFTWARE\USUARIOSTARJETAS.MDF].dbo.Usuarios" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@ci" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="ci" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UsuariosTarjetasConnectionString (MySettings)" DbObjectName="dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillDataPorNombre" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataPorNombre" GeneratorSourceName="FillDataPorNombre" GetMethodModifier="Public" GetMethodName="GetDataPorNombre" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataPorNombre" UserSourceName="FillDataPorNombre">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT IdTarjeta, Nombre, Apellido, ci, ultimaEscritura, foto FROM dbo.Usuarios WHERE (Nombre=@Nombre)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Nombre" ColumnName="Nombre" DataSourceName="[C:\USERS\LGUETTE\DOCUMENTS\VISUAL STUDIO 2015\PROJECTS\CARDDISPATCHERSOFTWARE\CARDDISPATCHERSOFTWARE\USUARIOSTARJETAS.MDF].dbo.Usuarios" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@Nombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="Nombre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UsuariosTarjetasConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertarFoto" Modifier="Public" Name="InsertarFoto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="InsertarFoto">
                 <UpdateCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InsertarFoto</CommandText>
@@ -131,7 +189,7 @@ SELECT IdTarjeta, Nombre, Apellido, ci, ultimaEscritura, foto FROM Usuarios WHER
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="UsuariosTarjetasConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertarUsuario" Modifier="Public" Name="InsertarUsuario" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="InsertarUsuario">
+              <DbSource ConnectionRef="UsuariosTarjetasConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertarUsuario" Modifier="Public" Name="InsertarUsuario" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="InsertarUsuario">
                 <InsertCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InsertarUsuario</CommandText>
@@ -227,7 +285,7 @@ SELECT Id, imagenes FROM Directorios WHERE (Id = @Id)</CommandText>
   <xs:element name="UsuariosTarjetasDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="UsuariosTarjetasDataSet" msprop:Generator_UserDSName="UsuariosTarjetasDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Usuarios" msprop:Generator_TableClassName="UsuariosDataTable" msprop:Generator_TableVarName="tableUsuarios" msprop:Generator_RowChangedName="UsuariosRowChanged" msprop:Generator_TablePropName="Usuarios" msprop:Generator_RowDeletingName="UsuariosRowDeleting" msprop:Generator_RowChangingName="UsuariosRowChanging" msprop:Generator_RowEvHandlerName="UsuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="UsuariosRowDeleted" msprop:Generator_RowClassName="UsuariosRow" msprop:Generator_UserTableName="Usuarios" msprop:Generator_RowEvArgName="UsuariosRowChangeEvent">
+        <xs:element name="Usuarios" msprop:Generator_TableClassName="UsuariosDataTable" msprop:Generator_TableVarName="tableUsuarios" msprop:Generator_TablePropName="Usuarios" msprop:Generator_RowDeletingName="UsuariosRowDeleting" msprop:Generator_RowChangingName="UsuariosRowChanging" msprop:Generator_RowEvHandlerName="UsuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="UsuariosRowDeleted" msprop:Generator_UserTableName="Usuarios" msprop:Generator_RowChangedName="UsuariosRowChanged" msprop:Generator_RowEvArgName="UsuariosRowChangeEvent" msprop:Generator_RowClassName="UsuariosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdTarjeta" msprop:Generator_ColumnVarNameInTable="columnIdTarjeta" msprop:Generator_ColumnPropNameInRow="IdTarjeta" msprop:Generator_ColumnPropNameInTable="IdTarjetaColumn" msprop:Generator_UserColumnName="IdTarjeta">
@@ -275,7 +333,7 @@ SELECT Id, imagenes FROM Directorios WHERE (Id = @Id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Directorios" msprop:Generator_TableClassName="DirectoriosDataTable" msprop:Generator_TableVarName="tableDirectorios" msprop:Generator_TablePropName="Directorios" msprop:Generator_RowDeletingName="DirectoriosRowDeleting" msprop:Generator_RowChangingName="DirectoriosRowChanging" msprop:Generator_RowEvHandlerName="DirectoriosRowChangeEventHandler" msprop:Generator_RowDeletedName="DirectoriosRowDeleted" msprop:Generator_UserTableName="Directorios" msprop:Generator_RowChangedName="DirectoriosRowChanged" msprop:Generator_RowEvArgName="DirectoriosRowChangeEvent" msprop:Generator_RowClassName="DirectoriosRow">
+        <xs:element name="Directorios" msprop:Generator_TableClassName="DirectoriosDataTable" msprop:Generator_TableVarName="tableDirectorios" msprop:Generator_RowChangedName="DirectoriosRowChanged" msprop:Generator_TablePropName="Directorios" msprop:Generator_RowDeletingName="DirectoriosRowDeleting" msprop:Generator_RowChangingName="DirectoriosRowChanging" msprop:Generator_RowEvHandlerName="DirectoriosRowChangeEventHandler" msprop:Generator_RowDeletedName="DirectoriosRowDeleted" msprop:Generator_RowClassName="DirectoriosRow" msprop:Generator_UserTableName="Directorios" msprop:Generator_RowEvArgName="DirectoriosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />

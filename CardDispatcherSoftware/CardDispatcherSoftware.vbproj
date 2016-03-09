@@ -112,6 +112,12 @@
     <Compile Include="ComunicacionIniciada.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Datos.Designer.vb">
+      <DependentUpon>Datos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Datos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="EscribirTarjeta.Designer.vb">
       <DependentUpon>EscribirTarjeta.vb</DependentUpon>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ComunicacionIniciada.resx">
       <DependentUpon>ComunicacionIniciada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Datos.resx">
+      <DependentUpon>Datos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EscribirTarjeta.resx">
       <DependentUpon>EscribirTarjeta.vb</DependentUpon>

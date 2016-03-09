@@ -22,3 +22,4 @@ C:\Users\lguette\Documents\Visual Studio 2015\Projects\CardDispatcherSoftware\Ca
 C:\Users\lguette\Documents\Visual Studio 2015\Projects\CardDispatcherSoftware\CardDispatcherSoftware\obj\Debug\CardDispatcherSoftware.exe.manifest
 C:\Users\lguette\Documents\Visual Studio 2015\Projects\CardDispatcherSoftware\CardDispatcherSoftware\obj\Debug\CardDispatcherSoftware.application
 C:\Users\lguette\Documents\Visual Studio 2015\Projects\CardDispatcherSoftware\CardDispatcherSoftware\obj\Debug\CardDispatcherSoftware.EscribirTarjeta.resources
+C:\Users\lguette\Documents\Visual Studio 2015\Projects\CardDispatcherSoftware\CardDispatcherSoftware\obj\Debug\CardDispatcherSoftware.Datos.resources
