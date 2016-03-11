@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CardDispatcherSoftware.exe" size="500680">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CardDispatcherSoftware.exe" size="501192">
       <assemblyIdentity name="CardDispatcherSoftware" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KhwnV8MbWOayOL84rWzOAn9R2SWw9LjqwuNN/aXKV78=</dsig:DigestValue>
+        <dsig:DigestValue>OB9AzRFcReNHqsl9pi51tRn1PoYNnBSsDpifxPjm/Ec=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

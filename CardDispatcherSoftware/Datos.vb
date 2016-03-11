@@ -116,4 +116,45 @@
         End If
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim strFilePath As String
+        Dim stm As IO.StreamWriter
+        Dim i As Integer
+        Dim j As Integer = 5
+        Dim directorioImagenes As New FolderBrowserDialog
+
+        directorioImagenes.SelectedPath = "C:\"
+
+        If directorioImagenes.ShowDialog() = DialogResult.OK Then
+            strFilePath = directorioImagenes.SelectedPath + "\datos.txt"
+        End If
+
+        Try
+            stm = New IO.StreamWriter(strFilePath, False)
+
+            For i = 0 To usuariosDataTable.Columns.Count - 2
+
+                stm.Write(usuariosDataTable.Columns(i).ColumnName + " | ")
+
+            Next i
+            stm.Write(usuariosDataTable.Columns(i).ColumnName)
+            stm.WriteLine()
+
+            For Each row As DataRow In usuariosDataTable.Rows
+                Dim array() As Object = row.ItemArray
+
+                For i = 0 To array.Length - 2
+                    stm.Write(array(i).ToString() + " | ")
+                Next i
+                stm.Write(array(i).ToString())
+                stm.WriteLine()
+            Next row
+
+            stm.Close()
+            MsgBox("Datos Exportados")
+        Catch ex As Exception
+            MsgBox("Datos No Exportados")
+        End Try
+
+    End Sub
 End Class
